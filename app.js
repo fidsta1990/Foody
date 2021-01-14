@@ -22,3 +22,42 @@ window.addEventListener("scroll", () => {
     header.classList.remove("current");
   }
 });
+
+//IMAGE CAROUSEL
+
+const carouselImages = document.querySelectorAll(".carousel__slide .slide");
+const carouselSlide = document.querySelector(".carousel__slide");
+
+const nextBtn = document.getElementById("next");
+const prevBtn = document.getElementById("prev");
+
+// const size = carouselImages[0].offsetWidth;
+
+const slideWidth = carouselImages[0].offsetWidth;
+
+let idx = 0;
+
+function run() {
+  idx++;
+  changeImage();
+}
+
+function changeImage() {
+  if (idx > carouselImages.length - 1) {
+    idx = 0;
+  } else if (idx < 0) {
+    idx = carouselImages.length - 1;
+  }
+
+  carouselSlide.style.transform = `translateX(${-idx * slideWidth}px)`;
+}
+
+prevBtn.addEventListener("click", () => {
+  idx--;
+  changeImage();
+});
+
+nextBtn.addEventListener("click", () => {
+  idx++;
+  changeImage();
+});

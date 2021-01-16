@@ -472,11 +472,16 @@
             <div class="section-set">
                 <h4>support</h4>
                 <h3>Subscribe Now & Get Company News</h3>
-                <form class="subscribe__form">
-                    <input type="text" class="sub__input" placeholder="Enter Your Email">
-                    <i class="far fa-envelope"></i>
 
-                    <button class="btn">
+
+                <form class="subscribe__form" action="https://formspree.io/f/xgeprjrg" method="POST">
+                    <div class="form__control error">
+                        <input type="text" class="sub__input" placeholder="Enter Your Email" name="_replyto">
+                        <i class="far fa-envelope"></i>
+                        <small>Error Message</small>
+                    </div>
+
+                    <button class="btn" type="submit">
                         <i class="far fa-paper-plane"></i>
                         Subscribe
                     </button>
